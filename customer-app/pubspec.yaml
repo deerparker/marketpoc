@@ -1,0 +1,59 @@
+name: customer_app
+description: "PoC App"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.1.0
+  intl: ^0.20.2
+  google_fonts: ^6.3.3
+  flutter_riverpod: ^2.6.1
+  go_router: ^8.0.1
+  cached_network_image: ^3.4.1
+  url_launcher: ^6.3.2
+  drift: ^2.14.1
+  sqlite3_flutter_libs: ^0.5.18
+  path_provider: ^2.1.2
+  path: ^1.9.0
+  shared_preferences: ^2.1.2
+  flutter_dotenv: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.8
+  drift_dev: ^2.14.1
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  web:
+    generate: true
+    image_path: "assets/images/logo.png"
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # flutter_launcher_icons requires this if you are using it
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
+    - assets/stubbed_images/
+    - .env
