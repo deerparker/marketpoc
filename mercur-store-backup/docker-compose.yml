@@ -1,0 +1,42 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+  vendor:
+    build:
+      context: ./vendor-panel
+    ports:
+      - "7002:7002"
+    environment:
+      - VITE_MEDUSA_BACKEND_URL=http://localhost:9000
+      - VITE_MEDUSA_BASE=/app
+    volumes:
+      - ./vendor-panel:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=medusa-store
+    ports:
+      - "5433:5432" # Mapped to 5433 to avoid conflict with local postgres if any
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

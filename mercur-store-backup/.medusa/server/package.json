@@ -1,0 +1,42 @@
+{
+    "name": "mercur-store",
+    "version": "0.0.1",
+    "description": "A MercurJS marketplace store",
+    "author": "",
+    "license": "MIT",
+    "keywords": [
+        "medusa",
+        "mercur",
+        "ecommerce",
+        "marketplace"
+    ],
+    "scripts": {
+        "build": "medusa build",
+        "start": "medusa start",
+        "dev": "medusa dev",
+        "seed": "medusa seed"
+    },
+    "dependencies": {
+        "@medusajs/framework": "latest",
+        "@medusajs/medusa": "latest",
+        "@mercurjs/algolia": "latest",
+        "@mercurjs/b2c-core": "latest",
+        "@mercurjs/commission": "latest",
+        "@mercurjs/framework": "latest",
+        "@mercurjs/payment-stripe-connect": "latest",
+        "@mercurjs/requests": "latest",
+        "@mercurjs/resend": "latest",
+        "@mercurjs/reviews": "latest",
+        "prop-types": "latest",
+        "react": "latest",
+        "yup": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "latest",
+        "ts-node": "^10.9.2",
+        "typescript": "latest"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}
